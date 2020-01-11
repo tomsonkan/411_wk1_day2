@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import BeerCard from './BeerCard';
 import './App.css';
 
 class App extends Component {
@@ -23,15 +24,16 @@ class App extends Component {
     .catch(error => console.log('parsing failed'. error))
   }
 
-  buttonColor(id) {
-    let beer = this.state.black
+  // buttonColor(id) {
+  //   let beer = this.state.black
 
-    if(beer === true) {
-      
-    }
-    this.setState({black: !this.state.black})
-  }
+  //   if(beer === true) {
 
+  //   }
+  //   this.setState({black: !this.state.black})
+  // }
+
+  
 
   render() {
     console.log("**THIS STATE**", this.state.items)
@@ -49,7 +51,8 @@ class App extends Component {
           {items.map(beer => (
             <li key={beer.id}>
             NAME: {beer.name} TAGLINE: {beer.tagline} <p> {beer.description}</p>
-            <button className ={btn_class} onClick = {this.buttonColor.bind(this)}>Like</button>
+            {/* <button className ={btn_class} onClick = {this.buttonColor.bind(this)}>Like</button> */}
+            <BeerCard  beerInfo={beer} />
             <h1>     </h1>
             </li>
           ))}
@@ -64,15 +67,3 @@ export default App;
 
 
 
-// //render() {
-// //  const {isLoading, contacts} = this.state
-//     return(
-//       <div>
-//         <div className ={`content ${isLoading ? 'isLoading' : ''}`>
-//           {
-
-//           }
-//         }
-//       </div>
-//     )
-// // }
