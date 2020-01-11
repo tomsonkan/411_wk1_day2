@@ -6,6 +6,7 @@ class BeerCard extends Component {
     isLiked: false
   }
 
+  //opposite of blackButton for handleLiked function
   handleLiked = () => {
     this.setState({isLiked: !this.state.isLiked})
   }

@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import BeerCard from './BeerCard';
 import './App.css';
 
+//does not need constructor and super
 class App extends Component {
   constructor(props) {
     super(props)
@@ -12,6 +13,7 @@ class App extends Component {
     }
   }
 
+//fetching data from punkAPI. isLoaded tied to "Like" button
   componentDidMount() {
     fetch('https://api.punkapi.com/v2/beers')
     .then(res => res.json())
@@ -24,6 +26,7 @@ class App extends Component {
     .catch(error => console.log('parsing failed'. error))
   }
 
+  //excluding buttonColor since I'm using "class BeerCard"
   // buttonColor(id) {
   //   let beer = this.state.black
 
@@ -34,7 +37,7 @@ class App extends Component {
   // }
 
   
-
+//btn_class component no longer being used. BeerCard tied to BeerCard.js file
   render() {
     console.log("**THIS STATE**", this.state.items)
     var {isLoaded, items} = this.state;
